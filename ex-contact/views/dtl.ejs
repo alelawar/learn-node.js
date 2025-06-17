@@ -1,0 +1,14 @@
+<ul>
+    <% if (!contact) { %>
+     <p>gada <a href="/contact">balik aja </a></p>
+    <% %> 
+    <% } else { %>
+        <li><%= contact.nama %></li>
+        <li><%= contact.no %></li>
+        <li><%= contact.email %></li>
+        <li><a href="/contact/delete/<%= contact.nama %>" class="btn btn-danger badge" onclick=" return confirm('Hapus?') ">Hapus</a></li>
+        <li><a href="/contact/edit/<%= contact.nama %>" class="btn btn-success badge">Edit</a></li>
+        
+        <% } %>
+     
+</ul>
