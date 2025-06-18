@@ -1,0 +1,32 @@
+<h1>Daftar Kontak:</h1>
+
+<% if (msg.length > 0) { %>
+  <div class="alert alert-success"><%= msg %></div>
+<% } %>
+
+<a href="/contact/add">Tambah kontak</a>
+
+<% if (contacts.length === 0) { %>
+<p>gada datanya</p>
+<% %> <% } else { %>
+<table border="1">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Nama</th>
+      <th>No HP</th>
+      <th>Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% contacts.forEach((kntk, i) => {i++ %>
+    <tr style="padding: 1rem">
+      <td><%= i++ %></td>
+      <td><%= kntk.nama %></td>
+      <td><%= kntk.nohp %></td>
+      <td><a href="/contact/<%= kntk.nama %>">Detail</a> |  </td>
+    </tr>
+  </tbody>
+  <% }) %>
+</table>
+<% } %>

@@ -1,0 +1,20 @@
+<ul>
+    <% if (!contact) { %>
+     <p>gada <a href="/contact">balik aja </a></p>
+    <% %> 
+    <% } else { %>
+        <li><%= contact.nama %></li>
+        <li><%= contact.nohp %></li>
+        <li><%= contact.email %></li>
+        <li>
+            <!-- <a href="/contact/delete/<%= contact.nama %>" class="btn btn-danger badge" onclick=" return confirm('Hapus?') ">Hapus</a> -->
+            <form action="/contact?_method=DELETE" method="post" >
+                <input type="hidden" name="nama" value="<%= contact.nama %>">
+                <button type="submit" class="btn btn-danger badge" onclick=" return confirm('Hapus der?') ">Hapus</button>
+            </form>
+        </li>
+        <li><a href="/contact/edit/<%= contact.nama %>" class="btn btn-success badge">Edit</a></li>
+        
+        <% } %>
+     
+</ul>
